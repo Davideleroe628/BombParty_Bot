@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "dictionaries",
+			"path": "../dictionaries"
+		},
+		{
+			"name": "BombParty_Bot",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

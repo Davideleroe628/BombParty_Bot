@@ -68,6 +68,7 @@ class Webscraper:
                 except Exception:
                     print(f'not {ip} server')
             input("Iframe's server not in list")
+
         else:
             iframe = self.wait.until(EC.presence_of_element_located((
                 By.CSS_SELECTOR, f'iframe[src="https://{self.server}.jklm.fun'
@@ -89,8 +90,8 @@ class Webscraper:
 
     def try_join_game(self):
         self._enter_iframe()
-        if not self.driver.find_element(By.XPATH, "//div[@class='join']")\
-            .is_displayed():
+        if not self.driver.find_element(
+                By.XPATH, "//div[@class='join']").is_displayed():
             return False
         join_button = self.driver.find_element(By.XPATH, "//button[contains"
                                     "(@class, 'styled') and contains(@class,"

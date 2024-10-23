@@ -9,4 +9,4 @@ PATH = 'dictionaries\\'
 FILE_SUFF = '.txt'
 
 # Bot
-DELAY = .1
+DELAY = .05

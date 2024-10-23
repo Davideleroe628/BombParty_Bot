@@ -42,11 +42,14 @@ class Wordlist:
         st_tm = time.time()
         ans = None
         n = 0
+
         if self.sort == None:
             for word in self.dicts[self.lang]:
                 if chars in word:
-                    if ans is None: ans = word
+                    if ans is None:
+                        ans = word
                     n += 1
+
         elif self.sort == 'l':
             ans = ''
             for word in self.dicts[self.lang]:
@@ -54,6 +57,7 @@ class Wordlist:
                     if len(word) > len(ans):
                         ans = word
                     n += 1
+
         elif self.sort == 's':
             ans = 30 * '_'
             for word in self.dicts[self.lang]:
@@ -61,10 +65,12 @@ class Wordlist:
                     if len(word) < len(ans):
                         ans = word
                     n += 1
+
         if n:
             if remove:
                 self.remove_word(ans)
             return ans, n, round((time.time() - st_tm) * 1000, 2)
+
         return None, 0, round((time.time() - st_tm) * 1000, 2)
 
 
