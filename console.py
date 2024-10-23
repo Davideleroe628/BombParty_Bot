@@ -13,12 +13,12 @@ class Console:
         choice = {}
         for n, i in enumerate(self.wordlist.dicts):
             print(n + 1, i)
-            choice[n + 1] = i
+            choice[n + 1] = str(i)
         try:
-            lang = choice[int(input(f'\nChoose a language: '))]
-        except Exception:
-            print(f'First language choosen, {choice[1]}')
-            lang = choice[1]
+            lang = choice[input(f'\nChoose a language: ')]
+        except KeyError:
+            print(f'First language choosen, {choice["1"]}')
+            lang = choice["1"]
         self.wordlist.lang = lang
 
 
